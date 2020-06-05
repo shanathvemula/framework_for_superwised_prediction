@@ -1,0 +1,80 @@
+{% load  static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <script src="https://kit.fontawesome.com/951d587519.js" crossorigin="anonymous"></script>
+    <style>
+        img{
+            border-radius: 20%;
+            float: right;
+            border: darkgrey 3px groove;
+        }
+        body{
+            background-image: url("{% static 'img/blue3.jpg' %}");
+            background-size: cover;
+        }
+        table{
+            border: #02fae5;
+            background: #777777;
+            align-content: center;
+            max-width: 100px;
+            margin: auto;
+            padding: 10px;
+            margin-top: 280px;
+            border-style: none;
+            border-radius: 10%;
+            font-family: 'French Script MT', cursive;
+            font-size: 40px;
+        }
+        .img {
+            border-radius: 50%;
+            float: left;
+        }
+        nav{
+            background-image: url("{% static 'img/alex.jpg' %}");
+            text-align: left;
+            font-family: 'Times New Roman';
+            color: #fbfcfc;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+    <a href=" " class="navbar-brand"><img src="{% static 'img/Eveluion.jpg' %}" width="100" height="50"></a>
+    <a href="/" class="nav-link"><i class="fas fa-home ui-icon-arrow-4-diag"></i></a>
+    <a href="/upload/" class="nav-link"><i class="fas fa-smile"></i> Predictions</a>
+    <img class="navbar-nav flex-row ml-md-auto d-none d-md-flex" style="border-radius: 50%;border: none;" src="{% static 'img/shanath.jpg' %}" width="50" height="50">
+</nav>
+<form action="/Loading/" method="post" enctype="multipart/form-data" align="center">
+        <div class="container">
+    {% csrf_token %}
+    <table onclick="al()">
+        <tr>
+            <td>
+                <img class="img" src="{% static 'img/logo1.png'%}" alt="Paris" width="200" height="200" onclick="img()" style="border: gold groove">
+            </td>
+        </tr>
+        <tr>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}</tr>
+        <tr>
+            <td>{{ Reg.as_table }}</td>
+        </tr>
+        <tr><td align="right"><button type="submit"><i class="fas fa-file-csv"></i> Upload</button></td></tr>
+    </table></div>
+    <script>
+            function al() {
+                alert("Insert CSV file only and also the grouping column name must be class.The file name must be a single word")
+            }
+            function img() {
+                alert("This the logo of Rayalseema university")
+            }
+        </script>
+</form>
+</body>
+</html>
