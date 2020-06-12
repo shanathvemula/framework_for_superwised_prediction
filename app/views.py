@@ -31,14 +31,18 @@ def Loading(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     media_file = MEDIA_ROOT + "\\files\\" + str(images)
-    file_name, file_extension = os.path.splitext(media_file)
-    if file_extension == '.csv':
-        response: HttpResponse = render(request, "Loading.html", {'file': images})
-        response.set_cookie('file', images)
-        return response
-    else:
-        os.remove(media_file)
-        messages.warning(request, 'The uploaded file is not a CSV file')
+    try:
+        file_name, file_extension = os.path.splitext(media_file)
+        if file_extension == '.csv':
+            response: HttpResponse = render(request, "Loading.html", {'file': images})
+            response.set_cookie('file', images)
+            return response
+        else:
+            os.remove(media_file)
+            messages.warning(request, 'The uploaded file is not a CSV file')
+            return render(request, 'upload.html', {"Reg": Reg()})
+    except:
+        messages.warning(request, 'The file name must be single word with out spaces')
         return render(request, 'upload.html', {"Reg": Reg()})
 def result(request):
     try:
