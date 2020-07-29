@@ -7,16 +7,6 @@
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <script src="https://kit.fontawesome.com/951d587519.js" crossorigin="anonymous"></script>
     <style>
-        .box{
-            background: url("{% static 'img/blue2.jpg' %}");
-            color: #ffeba0;
-            background-size: cover;
-            }
-        .box1{
-            background-image: url("{% static 'img/alex2.jpg' %}");
-            background-size: cover;
-            color: #caedd3;
-            font-stretch: ultra-condensed;
         }
         strong{
         font-family: 'Berkshire Swash', cursive;
@@ -34,12 +24,11 @@
         #center{
             text-align: center;
             padding-top: 25%;
-            background: url("{% static 'img/blue4.jpg' %}");
             background-size: auto;
             padding-bottom: 12%;
         }
         nav{
-            background-image: url("{% static 'img/alex.jpg' %}");
+            background-color: #FFFFFF;
             text-align: left;
             font-family: 'Times New Roman';
             color: #fbfcfc;
@@ -63,11 +52,11 @@
     <h1 style="color: #ff0000">Framework for Machine Learning Algorithms</h1>
     <h3>The application for Supervised Data sets</h3>
             <hr width="800" color="red">
-    <button type="submit" value="get" style="width: auto;"><a href="#aim">Get Started <i class="fas fa-arrow-alt-circle-right"></i> </a></button>
+    <button type="submit" value="get" style="width: auto;" id="aim"><a href="#aim">Get Started <i class="fas fa-arrow-alt-circle-right"></i> </a></button>
         </div>
     </div>
 </div>
-<div class="jumbotron box1" id="aim">
+<div class="container-fluid">
 <div class="container-fluid">
     <h1><b><u>Aim</u></b></h1>
     <p id="Introduction">This application reads the data set(csv file) from end user and explain which algorithm will give the best accurate classification for the uploaded file and prediction for the uploaded file data. In this, we have used six classification techniques. You can check the six algorithms accuracy. With these results, you can conclude that which Algorithm is suitable for handling the categorization problems of data inside the file.<br>
