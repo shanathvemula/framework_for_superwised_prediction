@@ -12,10 +12,6 @@
             font-family: 'Indie Flower', cursive;
             font-size: 20px;
         }
-        .box1{
-            background-image: url("{% static 'img/blue3.jpg' %}");
-            background-size: cover;
-        }
         img {
             border-radius: 20%;
             float: right;
@@ -42,13 +38,10 @@
             font-size: 1.2rem;
         }
         nav{
-            background-image: url("{% static 'img/alex.jpg' %}");
+            background-color: #FFFFFF;
             text-align: left;
             font-family: 'Times New Roman';
             color: #fbfcfc;
-        }
-        .box2{
-            background-image: url("{% static 'img/blue4.jpg' %}");
         }
     </style>
 </head>
@@ -66,7 +59,7 @@
     <a href="#lr" class="nav-link">Logistic Regression</a>
     <img class="navbar-nav flex-row ml-md-auto d-none d-md-flex" style="border-radius: 50%;border: none;" src="{% static 'img/shanath.jpg' %}" width="40" height="40">
 </nav>
-    <div class="jumbotron-fluid box2">
+    <div class="container-fluid">
         <br><br>
 <h1 id="Suggestion" align="center" style="font-size: 40px;color: goldenrod"><u>Prediction Result</u></h1><br>
 
@@ -79,8 +72,8 @@
         <br><br><br>
 <br>
 <br><br id="nn"><br></div>
-<div class="jumbotron box1">
-    <article class="forecast" style="float: right">
+<div class="jumbotron">
+    <article class="forecast" style="float: right; background-color: #FFFFFF;">
     <h1>Accuracy of the each algorithm</h1>
     <article class="day-forecast">
         <h2>Neural Networks</h2>
